@@ -1,7 +1,7 @@
 package 回文字符串.java;
 
 public class PalinDrome {
-    private boolean isNumber(char c) {
+    private boolean isAlphOrNumber(char c) {  //除了数字和字母其他的跳过
         return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
     }
 
@@ -16,9 +16,9 @@ public class PalinDrome {
             return 0;
         int i = 0, j = s.length() - 1; //两个变量，分别指向头尾
         while (i <= j){
-            if(!isNumber(s.charAt(i)))
+            if(!isAlphOrNumber(s.charAt(i)))
                 i++;
-            if(!isNumber(s.charAt(j)))
+            if(!isAlphOrNumber(s.charAt(j)))
                 j--;
             if(!isEqualIgnoreCae(s.charAt(i),s.charAt(j)))
                 return 1;
