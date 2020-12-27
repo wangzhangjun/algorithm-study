@@ -14,7 +14,7 @@ public class searchInArray {
         }
         int i = 0;
         int j = martix[0].length -1;
-        while((i < martix.length) && (j >= 0) ){
+        while((i < martix.length) && (j >= 0) ){  //martix.length表示数组行数
             if(target < martix[i][j])
                 j--;
             else if(target > martix[i][j])
@@ -28,7 +28,7 @@ public class searchInArray {
     public static void main(String[] args) {
         int a[][] = {{1,3,5},{2,4,6}};
         searchInArray test = new searchInArray();
-        int[] res = test.search(a,6);
+        int[] res = test.search(a,4);
         System.out.println(res[0]);
         System.out.println(res[1]);
     }
