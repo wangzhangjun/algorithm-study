@@ -13,6 +13,7 @@ public class signalNumber {
     /*
     * 方法1：使用set的唯一性，已经存在的，一定不会再set中再次出现。
     * 把set中的元素乘以2，然后减去原有的元素的和。就是我们要找出的。
+    * Time:O(n),Space:O(n)
     * */
     public  int signaleNumberWithSet(int nums[]) {
         Set<Integer> set = new HashSet<>();
@@ -32,6 +33,7 @@ public class signalNumber {
     * 方法2: 使用异或的性质。
     * 异或 ： X^X = 0 0^Y=Y
     * 所以两两异或所有的数字，最终的结果一定是单身数字
+    * Time:O(n),Space:O(1)
     * */
     public int signalNumWithXor(int nums[]) {
         int result = 0;
