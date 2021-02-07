@@ -7,11 +7,13 @@ int signaleNumberWithSet(int *nums, int len)
     std::set<int> numSet;
     int sum = 0, signalSum =0;
     for(int i =0; i < len; i++ ) {
-        
-//        numSet.insert(nums[i]);
-//        signalSum += nums[i];
+        if((numSet.find(nums[i])) == numSet.end()){
+            numSet.insert(nums[i]);
+            signalSum += nums[i];
+        }
+        sum += nums[i];
     }
-    return result;
+    return 2*signalSum - sum;
 }
 
 int signalNumWithXor(int *nums, int len )
@@ -25,7 +27,8 @@ int signalNumWithXor(int *nums, int len )
 
 int main(){
     int nums[] = {5,7,5,6,6};
-//    signaleNumberWithSet(nums, sizeof(nums)/sizeof(int));
+    int result1 = signaleNumberWithSet(nums, sizeof(nums)/sizeof(int));
+    std::cout << result1 << std::endl;
     int result = signalNumWithXor(nums, sizeof(nums)/sizeof(int));
     std::cout << result << std::endl;
 }
