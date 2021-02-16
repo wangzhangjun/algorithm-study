@@ -1,3 +1,10 @@
+#include <iostream>
+#include <vector>
+#include <stdio.h>
+#include <string.h>
+/*
+统计某个字符串中出现某个字符的个数，忽略大小写
+*/
 void wordLength(std::string &str, char target)
 {
     int i = 0;
