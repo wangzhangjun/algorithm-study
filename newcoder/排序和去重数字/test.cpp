@@ -1,3 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <stdio.h>
+#include <set>
+#include <string.h>
+#include <typeinfo>
 /*
 利用set：
 set是一个集合，元素时唯一的，集合中的元素是按照一定的顺序排列的。默认是升序的。
@@ -17,4 +23,9 @@ void quChongPaixu()
             std::cout << *it << std::endl;
         }
     }
+}
+
+int main()
+{
+    quChongPaixu();
 }
