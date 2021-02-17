@@ -9,6 +9,7 @@ using namespace std;
 /*
 任意进制转换成任意进制，注意修改下面的a和b的值。
 16进制输入：0X13，程序会默认跳过前两个0X字符
+测试其他时，注意修改跳过前两个字符0x
 */
 const int MAXSIZE = 10000;
 char str[MAXSIZE];  //输入的字符串
