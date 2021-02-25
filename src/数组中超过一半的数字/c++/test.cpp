@@ -2,11 +2,14 @@
 #include <map>
 #include <vector>
 
+/*
+题目：
+求数组中，超过一半以上的数字的个数
+*/
 bool cmp(std::pair<int, int> &m1, std::pair<int, int> &m2)
 {
     return m1.second > m2.second ;
 }
-
 
 //这个函数遍历太多了，只是为了学习map的排序
 void hashFunc(int a[], int size)
