@@ -5,6 +5,7 @@
 /*
 题目：
 求数组中，超过一半以上的数字的个数
+编译：g++ --std=c++11 test.cpp
 */
 bool cmp(std::pair<int, int> &m1, std::pair<int, int> &m2)
 {
@@ -61,9 +62,30 @@ void hashFunc1(int a[], int size)
     std::cout << maxNum << std::endl;
 }
 
+//方法2：使用摩尔计数法
+//遍历数组，让num = a[0], count = 1, 开始遍历，当a[i]==num的时候，count+1, 不等时，count-1, 当count=0时，说明抵消了，num重新赋值给当前值，count=1
+void hashFunc2(int a[], int size)
+{
+    int num = a[0], count = 1;
+    for (int i = 0; i < size; i++)
+    {
+        if(count  == 0) {
+            num = a[i];
+            count = 1;
+        }
+        if(num == a[i]) {
+            count++;
+        }
+        if(num != a[i]) {
+            count--;
+        }
+    }
+    std::cout << num << std::endl;
+}
+
 int main()
 {
-    int a[] = {1,1,1,1,1,3,3,3,3,3,3,3,3};
-    hashFunc1(a, sizeof(a)/sizeof(int));
+    int a[] = {1,1,1,1,1,3,3};
+    hashFunc2(a, sizeof(a)/sizeof(int));
     return 0;
 }
